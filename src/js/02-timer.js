@@ -3,7 +3,6 @@ import "flatpickr/dist/flatpickr.min.css";
 import Notiflix from 'notiflix';
 import "notiflix/dist/notiflix-3.2.6.min.css";
 
-// let newDate = new Date();
 let newDate = Date.now();
 let amountOfMs = 0;
 let chosenDate = 0;
@@ -24,9 +23,8 @@ const options = {
     minuteIncrement: 1,
     onClose(selectedDates) {
         if (selectedDates[0].getTime()<=newDate){
-            window.alert("Please choose a date in the future");
-                    }
-        else{
+            Notiflix.Notify.failure('Please choose a date in the future');
+        }else{
             start.removeAttribute("disabled");
         }
 
@@ -49,7 +47,6 @@ function onStartClick(){
             clearInterval(intervalID);
         }
     }, 1000);
-
 }
 
 function pad(value){
