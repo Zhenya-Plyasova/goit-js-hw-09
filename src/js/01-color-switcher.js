@@ -1,7 +1,7 @@
 const body = document.querySelector("body");
 const startButton = document.querySelector("button[data-start]");
 const stopButton = document.querySelector("button[data-stop]");
-let timerID = null;
+let timerId = null;
 
 startButton.addEventListener("click", onStartButtonClick);
 stopButton.addEventListener("click", onStopbuttonClick);
